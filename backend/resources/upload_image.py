@@ -5,6 +5,9 @@ import werkzeug
 from datetime import datetime
 import os
 
+from libs.predict_image import convert_image_to_array, request_model
+
+
 class UploadImage(Resource):
     parse = reqparse.RequestParser()
     parse.add_argument("file", type=werkzeug.datastructures.FileStorage, location="files")
@@ -17,8 +20,12 @@ class UploadImage(Resource):
         if "image" in image.content_type:
             time_str = datetime.now().strftime("%Y%m%d%H%M%S")
             image_name = f"{time_str}-{image.filename}"
-            image.save(os.path.join("uploads", image_name))
-            return make_response(render_template("index.html", message="Success"), 200, cls.headers)
+            image_path = os.path.join("uploads", image_name)
+            image.save(image_path)
+            image_array = convert_image_to_array(image_path)
+            class_predicted = request_model(image_array)
+
+            return make_response(render_template("index.html", message=f"Class predicted: {class_predicted}"), 200, cls.headers)
         return make_response(render_template("index.html", message="Error: Uploaded file is not an image"), 400, cls.headers)
     
     @classmethod
