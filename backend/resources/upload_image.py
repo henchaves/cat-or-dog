@@ -23,9 +23,9 @@ class UploadImage(Resource):
             image_path = os.path.join("uploads", image_name)
             image.save(image_path)
             image_array = convert_image_to_array(image_path)
-            class_predicted = request_model(image_array)
+            predicted_class = request_model(image_array)
 
-            return make_response(render_template("index.html", message=f"Class predicted: {class_predicted}"), 200, cls.headers)
+            return make_response(render_template("index.html", message=f"Predicted class: {predicted_class}"), 200, cls.headers)
         return make_response(render_template("index.html", message="Error: Uploaded file is not an image"), 400, cls.headers)
     
     @classmethod
