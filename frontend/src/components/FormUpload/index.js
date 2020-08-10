@@ -3,50 +3,56 @@ import React from "react";
 
 const FormUpload = () => {
   const apiUrl = "http://localhost:5000/";
+
+  const [loading, setLoading] = React.useState(null);
   const [image, setImage] = React.useState(null);
   const [predictedClass, setPredictedClass] = React.useState(null);
   var formData = new FormData();
 
   function handleFileChange(e) {
+    setPredictedClass(null);
     setImage(e.target.files[0]);
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     formData.append("file", image);
-    console.log(formData);
-
+    setLoading(true);
     const response = await fetch(apiUrl, {
-        // mode: "no-cors",
-        method: "POST",
-        body: formData
+      // mode: "no-cors",
+      method: "POST",
+      body: formData,
     });
 
     const responseJson = await response.json();
 
+    setLoading(false);
     setPredictedClass(responseJson["predicted_class"]);
   }
 
   return (
     <div style={styles.container}>
       <h2 style={styles.title}>Upload cat or dog image</h2>
-      <form
-        action=""
-        method="POST"
-        encType="multipart/form-data"
-        style={styles.form}
-      >
-        <input
-          type="file"
-          name="file"
-          style={styles.input}
-          onChange={handleFileChange}
-        />
-        <button type="submit" onClick={handleSubmit}>
-          Predict
-        </button>
-        {predictedClass && <p>{predictedClass}</p>}
-      </form>
+      <div style={styles.form}>
+        <div style={styles.row}>
+          <input
+            type="file"
+            name="file"
+            style={styles.input}
+            onChange={handleFileChange}
+          />
+          <button type="submit" onClick={handleSubmit}>
+            Predict
+          </button>
+        </div>
+        {loading && <p style={{textAlign: "center"}}>Loading...</p>}
+        {predictedClass && (
+          <p style={{ textAlign: "center" }}>
+            Predicted:{" "}
+            <span style={styles.predicted}>{predictedClass.toUpperCase()}</span>
+          </p>
+        )}
+      </div>
     </div>
   );
 };
@@ -72,12 +78,21 @@ const styles = {
     fontFamily: "Ubuntu",
   },
 
+  row: {
+    display: "flex",
+  },
+
   form: {
     display: "flex",
+    flexDirection: "column",
   },
 
   input: {
     width: 280,
+  },
+
+  predicted: {
+    color: "#bb0000",
   },
 };
 
