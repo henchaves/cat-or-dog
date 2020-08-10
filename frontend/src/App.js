@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import FormUpload from "./components/FormUpload";
 
 const App = () => {
   return (
-    <div>
-      Hello World!
-    </div>
-  )
-}
+    <React.Fragment>
+      <FormUpload />
+    </React.Fragment>
+  );
+};
 
-export default App
+export default App;
