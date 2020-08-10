@@ -1,18 +1,18 @@
-2020-08-08 22:24:23.975257: I tensorflow_serving/model_servers/server.cc:86] Building single TensorFlow model file config:  model_name: mobilenet model_base_path: /home/henrique/projects/cat-or-dog/tensorflow/models
-2020-08-08 22:24:24.799591: I tensorflow_serving/model_servers/server_core.cc:464] Adding/updating models.
-2020-08-08 22:24:24.799640: I tensorflow_serving/model_servers/server_core.cc:575]  (Re-)adding model: mobilenet
-2020-08-08 22:24:24.900434: I tensorflow_serving/core/basic_manager.cc:739] Successfully reserved resources to load servable {name: mobilenet version: 1}
-2020-08-08 22:24:24.900462: I tensorflow_serving/core/loader_harness.cc:66] Approving load for servable version {name: mobilenet version: 1}
-2020-08-08 22:24:24.900472: I tensorflow_serving/core/loader_harness.cc:74] Loading servable version {name: mobilenet version: 1}
-2020-08-08 22:24:24.939874: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:31] Reading SavedModel from: /home/henrique/projects/cat-or-dog/tensorflow/models/1
-2020-08-08 22:24:25.026306: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:54] Reading meta graph with tags { serve }
-2020-08-08 22:24:25.026344: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:295] Reading SavedModel debug info (if present) from: /home/henrique/projects/cat-or-dog/tensorflow/models/1
-2020-08-08 22:24:25.026792: I external/org_tensorflow/tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2020-08-08 22:24:25.252070: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:234] Restoring SavedModel bundle.
-2020-08-08 22:24:26.202991: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:183] Running initialization op on SavedModel bundle at path: /home/henrique/projects/cat-or-dog/tensorflow/models/1
-2020-08-08 22:24:26.312321: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:364] SavedModel load for tags { serve }; Status: success: OK. Took 1372438 microseconds.
-2020-08-08 22:24:26.333834: I tensorflow_serving/servables/tensorflow/saved_model_warmup.cc:105] No warmup data file found at /home/henrique/projects/cat-or-dog/tensorflow/models/1/assets.extra/tf_serving_warmup_requests
-2020-08-08 22:24:26.335941: I tensorflow_serving/core/loader_harness.cc:87] Successfully loaded servable version {name: mobilenet version: 1}
-2020-08-08 22:24:26.371681: I tensorflow_serving/model_servers/server.cc:355] Running gRPC ModelServer at 0.0.0.0:8500 ...
-2020-08-08 22:24:26.400733: I tensorflow_serving/model_servers/server.cc:375] Exporting HTTP/REST API at:localhost:8501 ...
+2020-08-10 20:02:45.168180: I tensorflow_serving/model_servers/server.cc:86] Building single TensorFlow model file config:  model_name: mobilenet model_base_path: /home/henrique/projects/cat-or-dog/tensorflow/models
+2020-08-10 20:02:45.197995: I tensorflow_serving/model_servers/server_core.cc:464] Adding/updating models.
+2020-08-10 20:02:45.198040: I tensorflow_serving/model_servers/server_core.cc:575]  (Re-)adding model: mobilenet
+2020-08-10 20:02:45.311809: I tensorflow_serving/core/basic_manager.cc:739] Successfully reserved resources to load servable {name: mobilenet version: 1}
+2020-08-10 20:02:45.311850: I tensorflow_serving/core/loader_harness.cc:66] Approving load for servable version {name: mobilenet version: 1}
+2020-08-10 20:02:45.311861: I tensorflow_serving/core/loader_harness.cc:74] Loading servable version {name: mobilenet version: 1}
+2020-08-10 20:02:45.320792: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:31] Reading SavedModel from: /home/henrique/projects/cat-or-dog/tensorflow/models/1
+2020-08-10 20:02:45.407135: I external/org_tensorflow/tensorflow/cc/saved_model/reader.cc:54] Reading meta graph with tags { serve }
+2020-08-10 20:02:45.407192: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:295] Reading SavedModel debug info (if present) from: /home/henrique/projects/cat-or-dog/tensorflow/models/1
+2020-08-10 20:02:45.407727: I external/org_tensorflow/tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-08-10 20:02:45.559064: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:234] Restoring SavedModel bundle.
+2020-08-10 20:02:46.515725: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:183] Running initialization op on SavedModel bundle at path: /home/henrique/projects/cat-or-dog/tensorflow/models/1
+2020-08-10 20:02:46.681121: I external/org_tensorflow/tensorflow/cc/saved_model/loader.cc:364] SavedModel load for tags { serve }; Status: success: OK. Took 1360327 microseconds.
+2020-08-10 20:02:46.716511: I tensorflow_serving/servables/tensorflow/saved_model_warmup.cc:105] No warmup data file found at /home/henrique/projects/cat-or-dog/tensorflow/models/1/assets.extra/tf_serving_warmup_requests
+2020-08-10 20:02:46.720023: I tensorflow_serving/core/loader_harness.cc:87] Successfully loaded servable version {name: mobilenet version: 1}
+2020-08-10 20:02:46.754960: I tensorflow_serving/model_servers/server.cc:355] Running gRPC ModelServer at 0.0.0.0:8500 ...
 [evhttp_server.cc : 238] NET_LOG: Entering the event loop ...
+2020-08-10 20:02:46.772762: I tensorflow_serving/model_servers/server.cc:375] Exporting HTTP/REST API at:localhost:8501 ...

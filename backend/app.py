@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Api
+from flask_cors import CORS
 
 from resources.upload_image import UploadImage
 
@@ -10,4 +11,5 @@ def create_app():
 
     api.add_resource(UploadImage, "/")
     
+    CORS(app)
     return app
